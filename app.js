@@ -23,11 +23,11 @@ function finalResult(attempts, player) {
         const win = winningCombination[i]
         if (win.every(position => attempts.includes(position))) {
             popup.style.visibility = "visible"
-            result.innerHTML = "'" + player + "'" + "You won the game!";
+            result.innerHTML = "'" + player + "'" + " You won the game!";
             return;
         }
         else {
-            if (moves == 9) {
+            if (moves === 9) {
                 popup.style.visibility = "visible"
                 result.innerHTML = "It is a  draw!";
                 return
@@ -47,7 +47,6 @@ function doubleClick(tile) {
 
 arena.addEventListener('click', function (event) {
     let box = event.target
-    console.log(box)
     if (doubleClick(box)) {
         moves++
         box.classList.add('clicked');
